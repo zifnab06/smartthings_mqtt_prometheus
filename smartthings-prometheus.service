@@ -1,0 +1,11 @@
+[Unit]
+Description=SmartThings Prometheus Endpoints
+Documentation=None
+
+[Service]
+Environment=PATH=/home/$USER/.pyenv/versions/stprom/bin:$PATH
+ExecStart=/home/$USER/.pyenv/versions/stprom/bin/python /home/$USER/smartthings-prometheus/server.py
+Restart=on-failure
+WorkingDirectory=/home/$USER/smartthings-prometheus/
+[Install]
+WantedBy=default.target
